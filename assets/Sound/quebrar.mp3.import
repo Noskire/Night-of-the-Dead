@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/quebrar.mp3-fb8040cf6b9007fbbde9264aad3dffc3.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/quebrar.mp3"
+dest_files=[ "res://.import/quebrar.mp3-fb8040cf6b9007fbbde9264aad3dffc3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

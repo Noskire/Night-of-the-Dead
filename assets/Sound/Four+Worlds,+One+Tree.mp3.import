@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Four+Worlds,+One+Tree.mp3-c870c3857af788353dab192d7556a0ac.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Four+Worlds,+One+Tree.mp3"
+dest_files=[ "res://.import/Four+Worlds,+One+Tree.mp3-c870c3857af788353dab192d7556a0ac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

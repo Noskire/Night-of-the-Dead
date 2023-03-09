@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/Themes/menu_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/Sound/sino_relógio.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/Sound/Hailstorm.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/menu_bg.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/controls.png" type="Texture" id=5]
+[ext_resource path="res://assets/Themes/title_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://src/Menus/MainMenu.gd" type="Script" id=7]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 7 )
+nextScenePath = "res://src/Game/Cemetery.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -235.0
+margin_top = 119.0
+margin_right = 909.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 6 )
+text = "Night of the Dead"
+
+[node name="Grid" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -117.5
+margin_top = -153.0
+margin_right = 791.5
+margin_bottom = 67.0
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 2
+
+[node name="DisplayMode" type="Label" parent="Grid"]
+margin_top = 3.0
+margin_right = 486.0
+margin_bottom = 64.0
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="Grid"]
+margin_left = 536.0
+margin_right = 909.0
+margin_bottom = 67.0
+text = "Windowed"
+items = [ "Windowed", null, false, 0, null, "FullScreen", null, false, 1, null ]
+selected = 0
+
+[node name="MasterVol" type="Label" parent="Grid"]
+margin_top = 117.0
+margin_right = 486.0
+margin_bottom = 178.0
+text = "Master Volume"
+
+[node name="HBox" type="HBoxContainer" parent="Grid"]
+margin_left = 536.0
+margin_top = 117.0
+margin_right = 909.0
+margin_bottom = 178.0
+
+[node name="MasterVolValue" type="Label" parent="Grid/HBox"]
+margin_right = 38.0
+margin_bottom = 61.0
+text = "0"
+
+[node name="MasterVolSlider" type="HSlider" parent="Grid/HBox"]
+margin_left = 42.0
+margin_right = 373.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+
+[node name="Controls" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_top = -480.0
+margin_right = 657.0
+texture = ExtResource( 5 )
+
+[node name="NewGame" type="Button" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 121.0
+margin_top = -33.5
+margin_right = 692.0
+margin_bottom = 33.5
+text = "New Game"
+flat = true
+
+[node name="LinkButton" type="LinkButton" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 121.0
+margin_top = -65.0
+margin_right = 692.0
+text = "Music by Nihilore"
+
+[node name="Play" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 6.0
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="item_selected" from="Grid/OptionButton" to="." method="_on_DisplayOptions_item_selected"]
+[connection signal="value_changed" from="Grid/HBox/MasterVolSlider" to="." method="_on_VolSlider_value_changed"]
+[connection signal="button_up" from="NewGame" to="." method="_on_NewGame_button_up"]
+[connection signal="button_up" from="LinkButton" to="." method="_on_LinkButton_button_up"]

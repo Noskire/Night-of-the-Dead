@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sino_relógio.mp3-7fbf84cc59c5d1d00fee3286957cf0a1.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/sino_relógio.mp3"
+dest_files=[ "res://.import/sino_relógio.mp3-7fbf84cc59c5d1d00fee3286957cf0a1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
